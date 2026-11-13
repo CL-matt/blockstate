@@ -5,3 +5,6 @@
 !/LICENSE
 !/blockstate_icons/
 !/dist/
+
+# 材质包不进仓库（含第三方材质）
+/dist/*.zip

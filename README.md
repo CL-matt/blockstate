@@ -32,12 +32,26 @@ NeoForge 1.21.1 纯客户端模组：根据物品上的 `minecraft:block_state` 
 
 ## 下载与安装
 
-[`dist/`](dist/) 中：
+[`dist/blockstate_icons-1.0.0.jar`](dist/) 是模组本体，放进 `mods/` 文件夹即可。模组只有代码，**不含图标贴图**；本仓库也不提供图标资源包（其中包含第三方材质，不便公开分发）。
 
-| 文件 | 说明 |
-|---|---|
-| `blockstate_icons-1.0.0.jar` | 模组本体，放进 `mods/` 文件夹。只有代码，不含图标贴图 |
-| `朝向贴图_1.21.1.zip` | 图标资源包，放进 `resourcepacks/` 并启用。模组需要它才能显示图标 |
+模组需要配合一个提供图标的资源包才能显示效果。资源包中需要有以下文件（`pack_format` 34）：
+
+```
+assets/hookfacing/
+├─ models/item/
+│  ├─ hook_{north,south,east,west}.json
+│  └─ {墙id}_{south,north,west,east}_{low,tall}.json   例：brick_wall_south_tall.json
+└─ textures/item/
+   └─ （模型引用的贴图）
+```
+
+模型就是普通的物品模型，例如：
+
+```json
+{ "parent": "minecraft:item/generated", "textures": { "layer0": "hookfacing:item/hook_north" } }
+```
+
+缺少某个模型时，对应物品在物品栏中显示原版图标。
 
 - 环境：Minecraft 1.21.1 + NeoForge 21.1.x
 - 只需要客户端安装，服务器不用装
@@ -71,9 +85,7 @@ cd blockstate_icons
 
 ## 许可
 
-代码以 [MIT](LICENSE) 协议发布。模组 jar 中不包含第三方材质。
-
-资源包 `朝向贴图_1.21.1.zip` 中的图标贴图由 Minecraft 原版材质、Minecraft Wiki 渲染图及 Terra 1912 材质包的材质加工而来，这些素材的版权归各自所有者（Mojang Studios、Terra 1912 / WBC 等），不在 MIT 协议范围内。
+代码以 [MIT](LICENSE) 协议发布。仓库和模组 jar 中均不包含第三方材质。
 
 ## 相关
 
