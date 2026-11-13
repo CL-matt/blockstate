@@ -32,12 +32,12 @@ NeoForge 1.21.1 纯客户端模组：根据物品上的 `minecraft:block_state` 
 
 ## 下载与安装
 
-[`dist/`](dist/) 中有两个版本，**二选一**放进 `mods/` 文件夹（模组 ID 相同，不能同时安装）：
+[`dist/`](dist/) 中：
 
 | 文件 | 说明 |
 |---|---|
-| `blockstate_icons-1.0.0.jar` | 完整版，自带全部图标资源，直接使用 |
-| `blockstate_icons-1.0.0-lite.jar` | 精简版，只有代码；需要同时启用资源包 `朝向贴图_1.21.1.zip` |
+| `blockstate_icons-1.0.0.jar` | 模组本体，放进 `mods/` 文件夹。只有代码，不含图标贴图 |
+| `朝向贴图_1.21.1.zip` | 图标资源包，放进 `resourcepacks/` 并启用。模组需要它才能显示图标 |
 
 - 环境：Minecraft 1.21.1 + NeoForge 21.1.x
 - 只需要客户端安装，服务器不用装
@@ -63,15 +63,22 @@ cd blockstate_icons
 ./gradlew build
 ```
 
-产物：`blockstate_icons-1.0.0.jar` 和 `blockstate_icons-1.0.0-lite.jar`。
+产物：`blockstate_icons-1.0.0.jar`（只有代码，图标由资源包提供）。
 
 注意：
 
-- 完整版在编译时会从上级目录的 `../朝向贴图/assets/hookfacing/` 复制图标资源，该目录不在本仓库中。没有它时编出来的完整版不含图标，需要另外配合资源包使用（相当于精简版）。
 - `build.gradle` 把编译输出目录设在了 `~/.gradle-builds/blockstate_icons`，产物在其中的 `libs/` 下，可按需改回默认的 `build/`。
 
 ## 许可
 
-代码以 [MIT](LICENSE) 协议发布。
+代码以 [MIT](LICENSE) 协议发布。模组 jar 中不包含第三方材质。
 
-`dist/` 中的完整版 jar 和资源包所含图标贴图由 Minecraft 原版材质、Minecraft Wiki 渲染图及 Terra 1912 材质包的材质加工而来，这些素材的版权归各自所有者（Mojang Studios、Terra 1912 作者等），不在 MIT 协议范围内。
+资源包 `朝向贴图_1.21.1.zip` 中的图标贴图由 Minecraft 原版材质、Minecraft Wiki 渲染图及 Terra 1912 材质包的材质加工而来，这些素材的版权归各自所有者（Mojang Studios、Terra 1912 / WBC 等），不在 MIT 协议范围内。
+
+## 相关
+
+Terra 1912（WBC）：
+
+- 官网：[terra1912.com](https://terra1912.com)
+- Discord：[discord.gg/cmcVH3GVu9](https://discord.gg/cmcVH3GVu9)
+- YouTube：[@WBCBuilds](https://www.youtube.com/@WBCBuilds)
