@@ -1,0 +1,7 @@
+# 只上传 mod 工程和编译产物，其余（tools、jar、材质包、素材图等）都不进仓库
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/blockstate_icons/
+!/dist/
