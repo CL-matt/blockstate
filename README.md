@@ -68,7 +68,7 @@ cd blockstate_icons
 注意：
 
 - 完整版在编译时会从上级目录的 `../朝向贴图/assets/hookfacing/` 复制图标资源，该目录不在本仓库中。没有它时编出来的完整版不含图标，需要另外配合资源包使用（相当于精简版）。
-- `build.gradle` 把编译输出目录设在了 `~/.gradle-builds/blockstate_icons`（为了避开 OneDrive 同步造成的文件锁问题），产物在其中的 `libs/` 下，可按需改回默认的 `build/`。
+- `build.gradle` 把编译输出目录设在了 `~/.gradle-builds/blockstate_icons`，产物在其中的 `libs/` 下，可按需改回默认的 `build/`。
 
 ## 许可
 
